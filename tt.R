@@ -15,7 +15,7 @@ clc()
 
 if (length(args)==0) {
   message("Welcome to Times Tables Trainer, by Mark Ziemann.")
-  Sys.sleep(1)
+  Sys.sleep(0.1)
   message("")
   myname <- user.input(prompt="What is your name?: ")
 } else {
@@ -23,20 +23,20 @@ if (length(args)==0) {
 }
 message("")
 message("Hello ", myname,", let's practice some times tables!!!")
-Sys.sleep(1)
+Sys.sleep(0.1)
 
 message("")
 message("If you ever need to exit the program, press Ctrl+C to get your R cursor back.")
-Sys.sleep(1)
+Sys.sleep(0.1)
 
 message("")
 suppressWarnings(quiztype <- as.integer(user.input(prompt="Which mode do you want, set time (1) or set number of questions (2)?: ")))
-Sys.sleep(1)
+Sys.sleep(0.1)
 
 if ( quiztype != 1 & quiztype != 2 ) {
   message("Sorry I didn't understand that. Your answer needs to be a number 1 or 2.")
   suppressWarnings(quiztype <- as.integer(user.input(prompt="Which mode do you want, set time (1) or set number of questions (2)?: ")))
-  Sys.sleep(1)
+  Sys.sleep(0.1)
 }
 
 
@@ -50,12 +50,12 @@ while ( is.na(maxtime) ) {
   message("")
   message("Sorry I didn't understand that. Your answer needs to be a number.")
   suppressWarnings(maxtime <- as.numeric(user.input(prompt="How much time do you want (in minutes)?: ")))
-  Sys.sleep(1)
+  Sys.sleep(0.1)
 }
 
 message("")
 message("OK, let's ask questions for ",maxtime," minutes!")
-Sys.sleep(1)
+Sys.sleep(0.1)
 
 i <- 1
 endtime <- Sys.time() + ( maxtime * 60 )
@@ -68,7 +68,7 @@ while ( Sys.time() < endtime ) {
   message("Question ",i)
 
   i = i + 1
-  Sys.sleep(1)
+  Sys.sleep(0.1)
 
   n1 <- sample(1:12,1)
   n2 <- sample(1:12,1)
@@ -79,13 +79,13 @@ while ( Sys.time() < endtime ) {
 
   message("")
   suppressWarnings(myans <- as.integer(user.input(prompt="Answer: ")))
-  Sys.sleep(1)
+  Sys.sleep(0.1)
 
   while ( is.na(myans) ) {
     message("")
     message("Sorry I didn't understand that. Your answer needs to be a number.")
     suppressWarnings(myans <- as.integer(user.input(prompt="Answer: ")))
-    Sys.sleep(1)
+    Sys.sleep(0.1)
   }
 
   if ( myans == n1 * n2 ) {
@@ -103,7 +103,7 @@ while ( Sys.time() < endtime ) {
   }
 
   sums <- c(sums, mysum)
-  Sys.sleep(1)
+  Sys.sleep(0.1)
 
   timeleft <- difftime(endtime , Sys.time(), units = "secs")[[1]]
   message("")
@@ -129,12 +129,12 @@ while ( is.na(numq) ) {
   message("")
   message("Sorry I didn't understand that. Your answer needs to be a number.")
   suppressWarnings(numq <- as.integer(user.input(prompt="Number of questions: ")))
-  Sys.sleep(1)
+  Sys.sleep(0.1)
 }
 
 message("")
 message("OK, let's do ",numq," time table questions!")
-Sys.sleep(1)
+Sys.sleep(0.1)
 
 i <- 1
 numleft <- numq
@@ -148,7 +148,7 @@ while (numleft > 0) {
 
   numleft = numleft - 1
   i = i + 1
-  Sys.sleep(1)
+  Sys.sleep(0.1)
 
   n1 <- sample(1:12,1)
   n2 <- sample(1:12,1)
@@ -159,13 +159,13 @@ while (numleft > 0) {
 
   message("")
   suppressWarnings(myans <- as.integer(user.input(prompt="Answer: ")))
-  Sys.sleep(1)
+  Sys.sleep(0.1)
 
   while ( is.na(myans) ) {
     message("")
     message("Sorry I didn't understand that. Your answer needs to be a number.")
     suppressWarnings(myans <- as.integer(user.input(prompt="Answer: ")))
-    Sys.sleep(1)
+    Sys.sleep(0.1)
   }
 
   if ( myans == n1 * n2 ) {
@@ -183,7 +183,7 @@ while (numleft > 0) {
   } 
 
   sums <- c(sums, mysum)
-  Sys.sleep(1)
+  Sys.sleep(0.1)
 
   message("")
   if ( numleft > 0 ) {
